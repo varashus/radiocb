@@ -13,7 +13,6 @@ namespace ConsoleApp72
             using var sr = new StreamReader(
                 path: @"..\..\..\src\cb.txt",
                 encoding: System.Text.Encoding.UTF8
-                
             );
             _ = sr.ReadLine();
             while (!sr.EndOfStream) radiok.Add(new(sr.ReadLine()));
@@ -44,9 +43,7 @@ namespace ConsoleApp72
             foreach (var r in radiok)
             {
                 sw.WriteLine($"{r.IdoPercben};{r.nev};{r.adatsb}");
-
-
-                
+    
             }
             int f8 = radiok.GroupBy(h => h.nev).Count();
             Console.WriteLine($"{f8}");

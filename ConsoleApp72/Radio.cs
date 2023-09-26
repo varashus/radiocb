@@ -11,16 +11,17 @@ namespace ConsoleApp72
         
 
         public TimeSpan ora { get; set; }
-        public int perc { get; set; }
         public int adatsb { get; set; }
         public string nev { get; set; }
-        public int IdoPercben = (int)ora.TotalSeconds;
+        public int IdoPercben => (int)ora.TotalSeconds;
 
         public Radio(string sor)
         {
             var r = sor.Split(';');
-            this.ora = TimeSpan.Parse(r[0]);
-            this.perc = int.Parse(r[1]);
+            ora = new TimeSpan(
+                hours: int.Parse(r[0]),
+                minutes: int.Parse(r[1]),
+                seconds: 0);
             this.adatsb = int.Parse(r[2]);
             this.nev = r[3];
 
